@@ -10,8 +10,6 @@ class Customer:
         self._age = age
         self._account = None
 
-
-
     @property
     def username(self):
         return self._username
@@ -36,12 +34,10 @@ class Customer:
     def account(self, account):
         self._account = account
 
-
-
     def account_to_string(self):
         choice = int(input("Profil (1)\nAccount (2)\nEingabe:"))
         if choice == 1:
-            change = int(input(f"\nUSERNAME:{self.username}\nALTER{self.age}\n\nDaten ändern?\nJa (1)\nNein(2)\n"))
+            change = int(input(f"\nUsername: {self.username}\nAge: {self.age}\n\nDaten ändern?\nJa (1)\nNein(2)\n"))
             if change == 1:
                 name = input("Do you want to change your name? Y/N")
                 if name == "Y":

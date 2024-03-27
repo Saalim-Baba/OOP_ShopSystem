@@ -1,7 +1,7 @@
-
 from product import Product
 from catalog import Catalog
 import random
+
 
 class Order:
     '''
@@ -121,7 +121,3 @@ class Order:
             print(f"{count}. Produkt: {product.name}\n Preis: {product.price} CHF\n Menge: {amount}")
             print("----------------------------------")
         print("\n")
-
-
-
-

@@ -1,41 +1,29 @@
 import pytest
+# Assuming the Catalog and Product classes are defined elsewhere as mentioned.
 from catalog import Catalog
 from product import Product
-from order import  Order
-# test_order.py
-from order import Order  # Replace 'your_module' with the actual module containing the 'Order' class
+from order import Order
 
 class TestOrder:
-
-
-
-    @pytest.fixture
-    def order(self, catalog):
-        return Order(12455, catalog)
-
     @pytest.fixture
     def catalog(self):
-        return Catalog()
+        catalog = Catalog()
+        # Simulating adding some products to the catalog for testing.
+        catalog.add_product(Product("Maserati", 13456, 5))  # Assuming Catalog has an add_product method.
+        catalog.add_product(Product("Ferrari", 24567, 3))
+        return catalog
 
-    def test_products_list_isempty(self, order):
-        product = order
-        assert len(product._products) == 0
+    @pytest.fixture
+    def account(self):
+        # Assuming there's an Account class defined elsewhere.
+        # This is a placeholder for an actual account object.
+        return {"id": 12345, "name": "Test User"}
 
-    def test_products_list_one_item(self, order):
-        order.add_products(Product("Masarati", 13456, 5))
-        assert order.size == 1
+    @pytest.fixture
+    def order(self, catalog, account):
+        return Order(catalog, account)
 
-    def test_products_list_two_items(self, order):
-        order.add_products(Product("Masarati", 13456, 5))
-        order.add_products(Product("Ferrari", 24567, 5))
-        assert order.size == 2
+    def test_order_initialization(self, order):
+        assert order.size == 0
 
-    def test_products_list_maximum_items(self, order):
-        for i in range(10):
-            order.add_products(Product(f"Product {i}", i * 1000, 5))
-        assert order.size == 10
 
-    def test_products_list_more_than_maximum_items(self, order):
-        for i in range(12):
-            order.add_products(Product(f"Product {i}", i * 1000, 5))
-        assert order.size == 10

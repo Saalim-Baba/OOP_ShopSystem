@@ -28,6 +28,8 @@ class Product:
         return self._quantity
 
     def decrease_quantity(self, amount):
-        if self._quantity > 0:
-            self._quantity -= amount
+        if amount > 0:
+            if self._quantity > 0:
+                self._quantity -= amount
+
 
