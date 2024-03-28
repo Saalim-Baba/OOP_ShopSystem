@@ -90,10 +90,9 @@ class Order:
         name = input("Name des Produkts: ")
         amount = int(input("Menge:  "))
         print("\n------------Wird überprüft--------------\n")
-
         product1 = self._catalog.order_product_by_name(name, amount)
-        if product1 is None:
-            print("Das Produkt gibt es nicht oder nicht genügend im Lager")
+        if isinstance(product1, str):
+            print(product1)
             return None
         else:
             self._products.append(product1)
@@ -114,10 +113,11 @@ class Order:
         """
         Gibt eine formatierte Darstellung der Produkte in dieser Bestellung aus.
         """
-        print("\n------------------||||| DEIN WARENKORB ||||||---------------------\n")
+        print("\n\n----------------------||||WARENKORB||||------------------------")
         if len(self._products) == 0:
-            print("\t\n--------------Noch keine Produkte-------------\n")
+            print("\t\n\t\t\t\t\tNoch keine Produkte\t\t\t\t\t\t")
+            print("\n---------------------------------------------------------------")
         for count, product in enumerate(self._products, start=1):
             print(f"{count}. Produkt: {product.name}\n Preis: {product.price} CHF\n Menge: {amount}")
-            print("----------------------------------")
+            print("--------------------------------------------------------------")
         print("\n")

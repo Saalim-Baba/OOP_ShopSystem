@@ -59,27 +59,31 @@ class Account:
         Anzeige.
         """
 
-        print("\n-------------------------------||||| BESTELLUNGEN ||||||---------------------------\n")
+        print("\n--------------------||||BESTELLUNGEN||||----------------------\n")
         for count, order in enumerate(self._orders, start=1):
             print(f"{count}. Bestellung {order._number} ")
-            print("\n-------------------------------------")
+            print("\n--------------------------------------------------------------")
 
-        choice = input("Bestellung anschauen? Y/N")
+        choice = input("\nBestellung anschauen? Y/N: ")
         if choice == "Y" and len(self._orders) > 0:
             try:
-                choice = int(input(f"Welche? 1 - {len(self._orders)}:  "))
-                choice -= 1
-                orders = self._orders[choice]
-                orders.to_string()
+                if len(self._orders) > 1:
+                    choice = int(input(f"Welche? 1 - {len(self._orders)}:  "))
+                    choice -= 1
+                    orders = self._orders[choice]
+                    orders.to_string()
+                elif len(self._orders) == 1:
+                    orders = self._orders[0]
+                    orders.to_string()
             except (ValueError, IndexError):
                 print("Fehler: Ungültige Eingabe oder Bestellung nicht gefunden!")
         else:
-            print("\n----------------- WEITERLEITUNG -----------------\n")
+            print("\n----------------------Weiterleitung------------------------\n")
             self.choice()
 
     def choice(self):
         global choice
-        print("\n----------------- ||||| ACCOUNT |||||| -------------------\n")
+        print("\n----------------------||||ACCOUNT||||------------------------\n")
         catalog = Catalog()
         catalog.fill_catalog()
         while True:
@@ -101,7 +105,7 @@ class Account:
                 if choice == 2:
                     order = Order(catalog, self)
                     self.add_order(order)
-                    print("\n-----------------Bestellung erstellt------------------\n")
+                    print("\n--------------------Bestellung erstellt----------------------\n")
                 if choice == 3:
                     try:
                         if len(self._orders) > 1:

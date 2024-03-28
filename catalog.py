@@ -35,7 +35,7 @@ class Catalog:
         else:
             self._catalog.append(product)
 
-    def order_product_by_name(self, name, amount):
+    def order_product_by_name(self, name: str, amount: int):
         """
         Bestellt ein Produkt aus dem Katalog basierend auf seinem Namen und der angegebenen Menge.
         Verringert die Menge des Produkts im Katalog entsprechend der Bestellung.
@@ -44,13 +44,15 @@ class Catalog:
         :return: Das bestellte Produkt oder None, wenn das Produkt nicht gefunden wurde.
         """
         global product1
-        for product1 in self._catalog:  # Verwenden Sie hier self._catalog
+        for product1 in self._catalog:
             if product1.name == name:
-                quantity = self.remove_quantity_by_amount(product1.name, amount)  # Verwenden Sie self.remove_quantity_by_amoun# t
+                quantity = self.remove_quantity_by_amount(product1.name, amount)
                 if quantity == amount:
                     return product1
                 else:
-                    return None
+                    return quantity
+            else:
+                return "Dieses Artikel gibt es nicht"
         return None
 
     def remove_quantity_by_amount(self, name, amount):
@@ -60,7 +62,7 @@ class Catalog:
         :param amount: Die Menge, um die die Produktmenge verringert werden soll.
         :return: Die tatsächlich reduzierte Menge oder "Nicht genug im Lager" bzw. "Produkt nicht gefunden".
         """
-        for i in self._catalog:  # Verwenden Sie hier self._catalog
+        for i in self._catalog:
             if i.name == name:
                 if amount <= i.quantity:
                     i.decrease_quantity(amount)
