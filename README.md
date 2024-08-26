@@ -1,4 +1,4 @@
-# THE UNLIMITED ONLINE SHOP
+# OOP Shopsystem
 
 # Über das Projekt
 Dieses Repository beinhaltet ein ausgereiftes objektorientiertes Projekt für ein E-Commerce-System, entwickelt in Python. Es umfasst mehrere miteinander verbundene Klassen, die verschiedene Aspekte eines Online-Handels abbilden, wie Kundenkonten, Produktkataloge, Bestellungen und Produkte. Jede Klasse ist sorgfältig durchdacht, um eine klare Abstraktion und eine einfache Wartbarkeit des Codes zu gewährleisten.
@@ -15,8 +15,3 @@ Die Dateien in diesem Repository sind wie folgt organisiert:
 
 Für jede der Hauptklassen existiert eine entsprechende Testdatei (z.B. account_test.py, catalog_test.py usw.), die Unittests für die Funktionalitäten der jeweiligen Klassen enthält. Diese Tests gewährleisten, dass Änderungen im Code nicht zu Fehlern in den bestehenden Funktionalitäten führen.
 
-# Neueste Aktualisierungen
-Das Projekt wird aktiv gewartet, und die letzten Commits beinhalten:
-
-* Anpassung von Strings in account.py, catalog.py und main.py für bessere Klarheit und Lesbarkeit.
-* Verbesserungen an den Tests in customer_test.py, order_test.py und product_test.py, die geringfügige Änderungen am Code beinhalten, um die Testbarkeit zu verbessern.
