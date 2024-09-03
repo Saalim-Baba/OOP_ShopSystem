@@ -1,7 +1,7 @@
 # OOP Shopsystem
 
 # Über das Projekt
-Dieses Repository beinhaltet ein ausgereiftes objektorientiertes Projekt für ein E-Commerce-System, entwickelt in Python. Es umfasst mehrere miteinander verbundene Klassen, die verschiedene Aspekte eines Online-Handels abbilden, wie Kundenkonten, Produktkataloge, Bestellungen und Produkte. Jede Klasse ist sorgfältig durchdacht, um eine klare Abstraktion und eine einfache Wartbarkeit des Codes zu gewährleisten.
+Dieses Repository beinhaltet ein ausgereiftes objektorientiertes Projekt für ein E-Commerce-System, entwickelt in Python. Es umfasst mehrere miteinander verbundene Klassen, die verschiedene Aspekte eines Online-Handels abbilden, wie Kundenkonten, Produktkataloge, Bestellungen und Produkte.
 
 # Projektstruktur
 Die Dateien in diesem Repository sind wie folgt organisiert:
